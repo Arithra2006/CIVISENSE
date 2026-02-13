@@ -78,8 +78,8 @@ Traditional platforms offer generic dashboards without role-specific insights or
 
 ### Installation
 
-```bash
-# Clone repository
+bash
+### Clone repository
 git clone https://github.com/yourusername/socioeconomic-analytics-platform.git
 cd socioeconomic-analytics-platform
 
