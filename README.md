@@ -94,61 +94,31 @@ pip install -r requirements.txt
 python init_db.py
 
 ### Run application
-python app.py
-The API will be available at http://localhost:5000
-📊 Dataset Overview
-All datasets are synthetic, modeled on publicly available Indian government data structures:
-Dataset
-Records
-Purpose
-Census Data
-8,000+
-State-wise demographics (1990-2025)
-Education Dataset
-500+
-College information (fees, placements, location)
-Cost-of-Living
-30+ states
-Utilities, rent, transport, job indices
-Government Schemes
-200+
-Welfare programs with eligibility criteria
-Data Processing Pipeline:
-Type normalization (string → numeric conversions)
-Missing value handling (median imputation for numeric, mode for categorical)
-Year-wise mapping (handles 1991/2001/2011 census format differences)
-Metric aggregation and comparison
-### 🔐 API Endpoints
-Authentication
-POST /api/auth/register
-POST /api/auth/login
-Student Endpoints
-GET  /api/student/colleges?state={state}&stream={stream}&max_fee={amount}
-POST /api/student/compare-colleges
-GET  /api/student/goal-progress?daily_cost={amount}&goal_amount={amount}
-POST /api/student/expenses
-Job Seeker Endpoints
-GET  /api/jobseeker/cost-of-living?state={state}
-POST /api/jobseeker/financial-goal
-GET  /api/jobseeker/compare-states?state1={state}&state2={state}
-Government Endpoints
-GET  /api/government/census?state={state}&year={year}
-POST /api/government/compare-census
-GET  /api/government/schemes?age={age}&state={state}&sector={sector}
-All endpoints require JWT token in Authorization header:
-Authorization: Bearer <your_jwt_token>
-🧪 Example Usage
-Find Affordable Engineering Colleges in Maharashtra
-curl -X GET "http://localhost:5000/api/student/colleges?state=Maharashtra&stream=Engineering&max_fee=200000" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
-Compare Cost of Living: Bangalore vs Pune
-curl -X POST "http://localhost:5000/api/jobseeker/compare-states" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"state1": "Karnataka", "state2": "Maharashtra"}'
-Get Government Schemes for Youth in Rural Areas
-curl -X GET "http://localhost:5000/api/government/schemes?age=22&sector=skill_development&area=rural" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+- python app.py
+- The API will be available at http://localhost:5000- 
+- 📊 Dataset Overview
+- All datasets are synthetic, modeled on publicly available Indian government data structures:
+- Dataset
+- Records
+- Purpose
+- Census Data
+- 5,000+
+- State-wise demographics (1990-2025)
+- Education Dataset
+- 500+
+- College information (fees, placements, location)
+- Cost-of-Living
+- 30+ states
+- Utilities, rent, transport, job indices
+- Government Schemes
+- 200+
+- Welfare programs with eligibility criteria
+- Data Processing Pipeline:
+- Type normalization (string → numeric conversions)
+- Missing value handling (median imputation for numeric, mode for categorical)
+- Year-wise mapping (handles 1991/2001/2011 census format differences)
+- Metric aggregation and comparison
+- 
 ### 🛠️ Technology Stack
 - Backend & APIs:
 - Python 3.9
