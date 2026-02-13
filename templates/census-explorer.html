@@ -1,0 +1,29 @@
+<!-- templates/census_explorer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Census Explorer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    #map { height: 600px; width: 100%; }
+    #info { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center">🗺️ Census Explorer (2011)</h2>
+  <div id="map"></div>
+  <div id="info" style="display:none;">
+    <h3 id="stateName"></h3>
+    <p><strong>Population:</strong> <span id="population"></span></p>
+    <p><strong>Poverty Rate:</strong> <span id="poverty"></span></p>
+    <p><strong>Literacy Rate:</strong> <span id="literacy"></span></p>
+    <p><strong>Average Income:</strong> <span id="income"></span></p>
+    <small>(According to 2011 Census)</small>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='map.js') }}"></script>
+</body>
+</html>

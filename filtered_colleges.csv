@@ -1,0 +1,7 @@
+name,state,stream,fees,student_rating,placement_rate,industry_tieups,location
+Birla Institute of Technology and Science,Maharashtra,Engineering,190162,2.8,94,Yes,Urban
+Shiv Nadar University,Maharashtra,Engineering,189285,3.1,74,No,Semi-Urban
+Indian Institute of Management Ahmedabad,Maharashtra,Engineering,86293,3.9,88,No,Semi-Urban
+Christ University,Maharashtra,Engineering,100187,3.3,79,No,Rural
+Christ University,Maharashtra,Engineering,127438,4.8,89,Yes,Rural
+SRM Institute of Science and Technology,Maharashtra,Engineering,94129,3.3,49,Yes,Rural

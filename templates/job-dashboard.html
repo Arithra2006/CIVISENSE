@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Seeker Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Job Seeker Dashboard</h1>
+        <div class="feature-box-container">
+            <a href="{{ url_for('goals') }}" class="feature-box">
+                <h3>Goal Tracker</h3>
+            </a>
+            <a href="{{ url_for('expense_job') }}" class="feature-box">
+                <h3>Expense Tracker</h3>
+            </a>
+      <a href="{{ url_for('state_data') }}" class="feature-box">
+
+    <h3>Know Your City Expenses</h3>
+</a>
+        </div>
+    </div>
+    <!-- Features Section -->
+    <div class="features-section">
+      <h2>🔍 Features</h2>
+        <li><strong>Job Seekers</strong> can:
+          <ul>
+            <li>Track personal goals and manage job-related expenses.</li>
+            <li>View cost of living in different states across India.</li>
+          </ul>
+        </li>
+</div>
+<button onclick="logoutUser()" style="position: absolute; top: 20px; right: 20px; background-color: crimson; color: white; padding: 10px 15px; border: none; border-radius: 6px;">
+  🔒 Logout
+</button>
+<script>
+  // 🔐 Check if user is logged in
+  // 🔐 Check if user is logged in
+  const token = localStorage.getItem('token');
+  if (!token) {
+      alert("Please log in first!");
+      window.location.href = "/";
+  }
+
+  // ✅ FIXED: Logout function that saves currentUser to users[]
+  function logoutUser() {
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+      const index = users.findIndex(u => u.email === currentUser.email && u.role === currentUser.role);
+      if (index !== -1) {
+          users[index] = currentUser; // Save updated data
+          localStorage.setItem('users', JSON.stringify(users));
+      }
+
+      localStorage.removeItem('token');
+      localStorage.removeItem('currentUser');
+
+      alert("Logged out successfully!");
+      window.location.href = "/";
+  }
+</script>
+<script src="{{ url_for('static', filename='auth.js') }}"></script>
+<script>
+  // Auto-save currentUser on tab close
+  window.addEventListener('beforeunload', () => {
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+      const index = users.findIndex(u => u.email === currentUser.email && u.role === currentUser.role);
+      if (index !== -1) {
+          users[index] = currentUser;
+          localStorage.setItem('users', JSON.stringify(users));
+      }
+  });
+</script>
+</body>
+</html>

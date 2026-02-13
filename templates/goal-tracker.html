@@ -1,0 +1,69 @@
+<!-- goal-tracker.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Goal Tracker</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="tool-container">
+        <!-- Goal Setup -->
+        <div id="goalSetup" class="goal-form">
+            <h2>Set Your Savings Goal</h2>
+            <form id="goalForm">
+                <input type="text" id="goalName" placeholder="Goal Description" required>
+                <input type="number" id="targetAmount" placeholder="Target Amount (₹)" required>
+                <input type="text" id="habitName" placeholder="Habit to Track" required>
+                <input type="number" id="habitCost" placeholder="Daily Cost (₹)" required>
+                <button type="submit">Start Tracking</button>
+            </form>
+        </div>
+
+        <!-- Progress Tracking -->
+        <div class="progress-container">
+            <h2>Your Goal Progress</h2>
+            
+            <!-- Achievement Badges -->
+            <div class="badges-container" id="badgesContainer">
+                <h3>Your Achievements</h3>
+                <div class="badges-grid" id="badgesGrid"></div>
+            </div>
+            
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+            <p id="daysRemaining"></p>
+            
+            <!-- Daily Check-in -->
+            <div id="dailyCheckin" class="hidden">
+                <p>Did you avoid <span id="habitNameDisplay"></span> today?</p>
+                <button id="checkinYes">Yes (₹<span id="savedAmount"></span> saved)</button>
+                <button id="checkinNo">No</button>
+            </div>
+            
+            <!-- Savings History -->
+            <div class="history-container">
+                <h3>Savings History</h3>
+                <div id="savingsHistory"></div>
+            </div>
+            
+            <!-- Report Generation -->
+            <div class="report-section">
+                <h3>Generate Progress Report</h3>
+                <select id="reportRange">
+                    <option value="7">Last 7 Days</option>
+                    <option value="30">Last 30 Days</option>
+                    <option value="90">Last 90 Days</option>
+                    <option value="all">All Time</option>
+                </select>
+                <button id="generateReport">Download Report</button>
+            </div>
+            
+            <!-- Notifications -->
+            <button id="enableNotifications">Enable Daily Reminders</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='goal-tracker.js') }}"></script>
+</body>
+</html>

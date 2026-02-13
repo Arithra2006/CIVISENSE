@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Government Employee Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Government Employee Dashboard</h1>
+        <div class="feature-box-container">
+            <a href="{{ url_for('census_explorer') }}" class="feature-box">
+                <h3>Census Explorer</h3>
+            </a>
+            <a href="{{ url_for('development') }}" class="feature-box">
+                <h3>State Development</h3>
+            </a>
+            <a href="{{ url_for('budget') }}" class="feature-box">
+                <h3>Budget-Tracker</h3>
+            </a>
+        </div>
+    </div>
+    <div class="features-section">
+      <h2>🔍 Features</h2>
+      <li><strong>Government Employees</strong> can:
+          <ul>
+            <li>View national insights like poverty rate, literacy rate, population, and average income by state.</li>
+            <li>Explore and compare socio-economic data between 1990 and 2024 on an interactive map.</li>
+          </ul>
+        </li>
+<button onclick="logoutUser()" style="position: absolute; top: 20px; right: 20px; background-color: crimson; color: white; padding: 10px 15px; border: none; border-radius: 6px;">
+  🔒 Logout
+</button>
+<script>
+  // 🔐 Check if user is logged in
+  const token = localStorage.getItem('token');
+  if (!token) {
+      alert("Please log in first!");
+      window.location.href = "/";
+  }
+
+  // 🔓 Logout logic
+  function logoutUser() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('currentUser');
+      alert("Logged out successfully!");
+      window.location.href = "/";
+  }
+</script>
+<script src="{{ url_for('static', filename='auth.js') }}"></script>
+</body>
+</html>

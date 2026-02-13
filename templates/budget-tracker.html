@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Your Budget Dashboard</h1>
+    </header>
+    
+    <div class="container dashboard-container">
+        <main>
+            <div class="expense-tracker">
+                <div class="expense-input">
+                    <h2>Add New Expense</h2>
+                    <form id="expenseForm">
+                        <div class="form-group">
+                            <label for="expenseItem">Category</label>
+                            <select id="expenseItem" required>
+                                <option value="">Select Category</option>
+                                <option value="Infrastructure">Infrastructure</option>
+                                <option value="Defence">Defence</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Education">Education</option>
+                                <option value="Agriculture and rural development">Agriculture and rural development</option>
+                                <option value="Social welfare and pensions">social welfare and pensions</option>
+                                <option value="Law & order">Law & order</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="expenseCost">Amount (₹)</label>
+                            <input type="number" id="expenseCost" required step="0.01" min="0.01">
+                        </div>
+                        <button type="submit" class="cta-button">Add Expense</button>
+                    </form>
+                </div>
+                
+                <div class="expense-table">
+                    <h2>Your Expenses</h2>
+                    <table id="expensesTable">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Total Amount (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    
+                    <div class="savings-message hidden" id="savingsMessage"></div>
+                    
+                    <div class="report-options">
+                        <h3>Download Report</h3>
+                        <select id="expenseReportType">
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="custom">Custom Date Range</option>
+                        </select>
+                        
+                        <div id="expenseCustomRange" class="hidden">
+                            <label>From: <input type="date" id="expenseStartDate"></label>
+                            <label>To: <input type="date" id="expenseEndDate"></label>
+                        </div>
+                        
+                        <button id="downloadExpenseReport" class="cta-button">Download Excel</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='budget.js') }}"></script>
+</body>
+</html>

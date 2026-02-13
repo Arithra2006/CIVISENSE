@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      min-height: 100vh;
+      background-color: #f2f2f2;
+    }
+
+    .app-container {
+      width: 90%;
+      max-width: 800px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    h2 {
+      margin: 20px 0 10px;
+      font-size: 22px;
+    }
+
+    .role-selection-container {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .login-prompt {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .role-options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .role-btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .role-btn:hover {
+      background-color: #45a049;
+    }
+
+    #govtSchemeSection {
+      margin: 30px 0;
+    }
+
+    #govtSchemeSection button {
+      padding: 10px 16px;
+      font-size: 16px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #govtSchemeSection button:hover {
+      background-color: #0b7dda;
+    }
+
+    .features-section {
+      margin-top: 30px;
+      background-color: #ffffff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .features-section h2 {
+      text-align: center;
+      color: #222;
+    }
+
+    .features-section ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    .features-section ul li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Page Heading -->
+    <h1>CiviSmart</h1>
+
+    <!-- Role Selection -->
+    <div id="roleSelection" class="role-selection-container">
+      <h2 class="login-prompt">You are logging in as:</h2>
+      <div class="role-options">
+        <button id="studentBtn" class="role-btn">🎓 Student</button>
+        <button id="jobSeekerBtn" class="role-btn">💼 Job Seeker</button>
+        <button id="govtBtn" class="role-btn">🏛️ Government Employee</button>
+      </div>
+    </div>
+
+    <!-- Govt Scheme Section -->
+    <div id="govtSchemeSection">
+      <h2>Explore Government Schemes</h2>
+      <button onclick="window.location.href='/govt-schemes'">Click Here</button>
+    </div>
+
+    
+    <!-- Auth Forms -->
+    <div id="authForms" class="hidden"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='auth.js')}}"></script>
+</body>
+</html>

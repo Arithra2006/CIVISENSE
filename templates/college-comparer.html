@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compare Colleges</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🏫 Compare Colleges</h1>
+
+    <label for="college1">College 1:</label>
+    <input list="collegeNames" id="college1" placeholder="Type first college name..." />
+
+    <label for="college2">College 2:</label>
+    <input list="collegeNames" id="college2" placeholder="Type second college name..." />
+
+    <datalist id="collegeNames"></datalist>
+
+    <button onclick="compareColleges()">Compare</button>
+
+    <div id="comparisonResult" style="margin-top: 30px;"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='CollegeComparer.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compare State Development</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2 style="text-align:center;">📊 Compare Development of Indian States</h2>
+
+  <div style="text-align:center; margin-top: 20px;">
+    <label for="state1">State 1:</label>
+    <select id="state1">
+      <option disabled selected>Select State</option>
+      <option>Andhra Pradesh</option>
+      <option>Arunachal Pradesh</option>
+      <option>Assam</option>
+      <option>Bihar</option>
+      <option>Chhattisgarh</option>
+      <option>Goa</option>
+      <option>Gujarat</option>
+      <option>Haryana</option>
+      <option>Himachal Pradesh</option>
+      <option>Jharkhand</option>
+      <option>Karnataka</option>
+      <option>Kerala</option>
+      <option>Madhya Pradesh</option>
+      <option>Maharashtra</option>
+      <option>Manipur</option>
+      <option>Meghalaya</option>
+      <option>Mizoram</option>
+      <option>Nagaland</option>
+      <option>Odisha</option>
+      <option>Punjab</option>
+      <option>Rajasthan</option>
+      <option>Sikkim</option>
+      <option>Tamil Nadu</option>
+      <option>Telangana</option>
+      <option>Tripura</option>
+      <option>Uttar Pradesh</option>
+      <option>Uttarakhand</option>
+      <option>West Bengal</option>
+      <option>Delhi</option>
+    </select>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <label for="state2">State 2:</label>
+    <select id="state2">
+      <option disabled selected>Select State</option>
+      <option>Andhra Pradesh</option>
+      <option>Arunachal Pradesh</option>
+      <option>Assam</option>
+      <option>Bihar</option>
+      <option>Chhattisgarh</option>
+      <option>Goa</option>
+      <option>Gujarat</option>
+      <option>Haryana</option>
+      <option>Himachal Pradesh</option>
+      <option>Jharkhand</option>
+      <option>Karnataka</option>
+      <option>Kerala</option>
+      <option>Madhya Pradesh</option>
+      <option>Maharashtra</option>
+      <option>Manipur</option>
+      <option>Meghalaya</option>
+      <option>Mizoram</option>
+      <option>Nagaland</option>
+      <option>Odisha</option>
+      <option>Punjab</option>
+      <option>Rajasthan</option>
+      <option>Sikkim</option>
+      <option>Tamil Nadu</option>
+      <option>Telangana</option>
+      <option>Tripura</option>
+      <option>Uttar Pradesh</option>
+      <option>Uttarakhand</option>
+      <option>West Bengal</option>
+      <option>Delhi</option>
+    </select>
+  </div>
+
+  <div style="text-align:center; margin-top: 20px;">
+    <label for="fromYear">From Year:</label>
+    <select id="fromYear">
+      <option value="" disabled selected>Select Year</option>
+      {% for y in range(1990, 2025) %}
+      <option value="{{ y }}">{{ y }}</option>
+      {% endfor %}
+    </select>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <label for="toYear">To Year:</label>
+    <select id="toYear">
+      <option value="" disabled selected>Select Year</option>
+      {% for y in range(1990, 2025) %}
+      <option value="{{ y }}">{{ y }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div style="text-align:center; margin-top: 30px;">
+    <button onclick="compareDevelopment()">Compare</button>
+  </div>
+
+  <div id="comparisonResult" style="margin: 40px auto; max-width: 800px; display:none;">
+    <h3 style="text-align:center;">📈 Comparison Results</h3>
+    <div id="state1Data"></div>
+    <hr>
+    <div id="state2Data"></div>
+    <hr>
+    <div id="suggestionBox" style="background-color:#f5f5f5; padding: 15px; border-radius: 8px;">
+      <h4>💡 Suggestions</h4>
+      <pre id="suggestionsText" style="white-space:pre-wrap;"></pre>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='dev_compare.js') }}"></script>
+</body>
+</html>

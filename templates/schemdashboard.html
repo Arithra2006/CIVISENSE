@@ -1,0 +1,19 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Seeker Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Job Seeker Dashboard</h1>
+        <div class="feature-box-container">
+            <a href="{{ url_for('govt_schemes') }}" class="feature-box">
+</a>
+ <button class="hero-button" onclick="window.location.href='/govt-schemes'">Click Here</button>
+        </div>
+    </div>
+</body>
+</html>

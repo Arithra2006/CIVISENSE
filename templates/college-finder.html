@@ -1,0 +1,76 @@
+<!-- CollegeFinder.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Finder</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 College Finder</h1>
+    <label for="stream">Select Stream:</label>
+<select id="stream">
+  <option value="">-- Select a Stream --</option>
+  <option>Engineering</option>
+  <option>Management</option>
+  <option>Science</option>
+  <option>Arts</option>
+  <option>Hotel-management</option>
+  <option>Medical</option>
+  <option>Pharmacy</option>
+  <option>Commerce</option>
+</select>
+    
+    <label for="state">Select State:</label>
+    <select id="state">
+      <option value="">-- Select a State --</option>
+      <option>Andhra Pradesh</option>
+      <option>Arunachal Pradesh</option>
+      <option>Assam</option>
+      <option>Bihar</option>
+      <option>Chhattisgarh</option>
+      <option>Goa</option>
+      <option>Gujarat</option>
+      <option>Haryana</option>
+      <option>Himachal Pradesh</option>
+      <option>Jharkhand</option>
+      <option>Karnataka</option>
+      <option>Kerala</option>
+      <option>Madhya Pradesh</option>
+      <option>Maharashtra</option>
+      <option>Manipur</option>
+      <option>Meghalaya</option>
+      <option>Mizoram</option>
+      <option>Nagaland</option>
+      <option>Odisha</option>
+      <option>Punjab</option>
+      <option>Rajasthan</option>
+      <option>Sikkim</option>
+      <option>Tamil Nadu</option>
+      <option>Telangana</option>
+      <option>Tripura</option>
+      <option>Uttar Pradesh</option>
+      <option>Uttarakhand</option>
+      <option>West Bengal</option>
+      <option>Delhi</option>
+    </select>
+
+    <label for="budget">Optional: Max Budget (₹):</label>
+    <input type="number" id="budget" placeholder="e.g. 100000"/>
+
+    <button onclick="findColleges()">Find Colleges</button>
+    <button onclick="loadInsights()">📊 Show Insights</button>
+
+    <div id="result"></div>
+  </div>
+  <div id="insights" style="margin-top: 40px;">
+  <h2>📈 Average Fees by Stream</h2>
+  <canvas id="feesChart" width=300px height=150px></canvas>
+</div>
+
+  <script src="{{ url_for('static', filename='Collegefinder.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

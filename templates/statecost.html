@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>State Cost Viewer</title>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compare Colleges</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        #stateData {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+  <h2>State Cost Information</h2>
+
+  <label for="stateSelect">Choose a state:</label>
+  <select id="stateSelect">
+    <option disabled selected>-- Select a State --</option>
+    <option>Andhra Pradesh</option>
+    <option>Arunachal Pradesh</option>
+    <option>Assam</option>
+    <option>Bihar</option>
+    <option>Chhattisgarh</option>
+    <option>Goa</option>
+    <option>Gujarat</option>
+    <option>Haryana</option>
+    <option>Himachal Pradesh</option>
+    <option>Jharkhand</option>
+    <option>Karnataka</option>
+    <option>Kerala</option>
+    <option>Madhya Pradesh</option>
+    <option>Maharashtra</option>
+    <option>Manipur</option>
+    <option>Meghalaya</option>
+    <option>Mizoram</option>
+    <option>Nagaland</option>
+    <option>Odisha</option>
+    <option>Punjab</option>
+    <option>Rajasthan</option>
+    <option>Sikkim</option>
+    <option>Tamil Nadu</option>
+    <option>Telangana</option>
+    <option>Tripura</option>
+    <option>Uttar Pradesh</option>
+    <option>Uttarakhand</option>
+    <option>West Bengal</option>
+    <option>Jammu and Kashmir</option>
+  </select>
+
+  <button onclick="fetchStateData()">See State Costs</button>
+
+  <div id="stateData">
+    <h3>Details for <span id="selectedState"></span></h3>
+    <table>
+      <tbody id="dataTableBody"></tbody>
+    </table>
+  </div>
+
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
