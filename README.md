@@ -83,17 +83,17 @@ bash
 git clone https://github.com/yourusername/socioeconomic-analytics-platform.git
 cd socioeconomic-analytics-platform
 
-# Create virtual environment
+### Create virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Initialize database
+### Initialize database
 python init_db.py
 
-# Run application
+### Run application
 python app.py
 The API will be available at http://localhost:5000
 📊 Dataset Overview
@@ -118,7 +118,7 @@ Type normalization (string → numeric conversions)
 Missing value handling (median imputation for numeric, mode for categorical)
 Year-wise mapping (handles 1991/2001/2011 census format differences)
 Metric aggregation and comparison
-🔐 API Endpoints
+### 🔐 API Endpoints
 Authentication
 POST /api/auth/register
 POST /api/auth/login
@@ -149,44 +149,44 @@ curl -X POST "http://localhost:5000/api/jobseeker/compare-states" \
 Get Government Schemes for Youth in Rural Areas
 curl -X GET "http://localhost:5000/api/government/schemes?age=22&sector=skill_development&area=rural" \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
-🛠️ Technology Stack
-Backend & APIs:
-Python 3.9
-Flask (RESTful API framework)
-SQLAlchemy (ORM)
-JWT (Authentication)
-Data Processing:
-Pandas (Data manipulation & analytics)
-NumPy (Numerical computations)
-Database:
-SQLite (Development)
-PostgreSQL-ready (Production migration path)
-Security:
-JWT token-based authentication
-Role-based access control (RBAC)
-Password hashing (bcrypt)
-📈 Key Differentiators
-✅ Multi-role architecture: Single platform serving diverse user needs
-✅ Data-driven insights: Analytics computed from processed datasets, not hardcoded
-✅ Comparative analysis: State-wise, year-wise, and metric-based comparisons
-✅ Decision support: Goal timelines, eligibility checks, trend analysis
-✅ Production-aware design: JWT security, ORM abstraction, modular structure
-vs Generic Dashboards:
-Not just visualization → Actionable insights
-Not static content → Dynamic data processing
-Not single-purpose → Multi-domain analytics
+### 🛠️ Technology Stack
+- Backend & APIs:
+- Python 3.9
+- Flask (RESTful API framework)
+- SQLAlchemy (ORM)
+- JWT (Authentication)
+- Data Processing:
+- Pandas (Data manipulation & analytics)
+- NumPy (Numerical computations)
+- Database:
+- SQLite (Development)
+- PostgreSQL-ready (Production migration path)
+- Security:
+- JWT token-based authentication
+- Role-based access control (RBAC)
+- Password hashing (bcrypt)
+### 📈 Key Differentiators
+- ✅ Multi-role architecture: Single platform serving diverse user needs
+- ✅ Data-driven insights: Analytics computed from processed datasets, not hardcoded
+- ✅ Comparative analysis: State-wise, year-wise, and metric-based comparisons
+- ✅ Decision support: Goal timelines, eligibility checks, trend analysis
+- ✅ Production-aware design: JWT security, ORM abstraction, modular structure
+- vs Generic Dashboards:
+- Not just visualization → Actionable insights
+- Not static content → Dynamic data processing
+- Not single-purpose → Multi-domain analytics
 
-🤝 Contributing
+### 🤝 Contributing
 Contributions welcome! Please follow these steps:
 Fork the repository
 Create a feature branch (git checkout -b feature/AmazingFeature)
 Commit changes (git commit -m 'Add AmazingFeature')
 Push to branch (git push origin feature/AmazingFeature)
 Open a Pull Request
-👤 Author
-Arithra Mayur
-📧 Email: arithramayur@gmail.com
-🙏 Acknowledgments
-Datasets modeled on Indian government open data structures
-Inspired by real-world socio-economic decision-support needs
-Built as a demonstration of data analytics and backend engineering
+### 👤 Author
+- Arithra Mayur
+- 📧 Email: arithramayur@gmail.com
+### 🙏 Acknowledgments
+- Datasets modeled on Indian government open data structures
+- Inspired by real-world socio-economic decision-support needs
+- Built as a demonstration of data analytics and backend engineering
