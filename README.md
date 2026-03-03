@@ -80,7 +80,7 @@ Traditional platforms offer generic dashboards without role-specific insights or
 
 bash
 ### Clone repository
-git clone https://github.com/yourusername/socioeconomic-analytics-platform.git
+git clone https://github.com/Arithra2006/CIVISENSE.git
 cd socioeconomic-analytics-platform
 
 ### Create virtual environment
